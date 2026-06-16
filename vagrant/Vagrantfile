@@ -1,0 +1,27 @@
+Vagrant.configure("2") do |config|
+  # Use a box known for excellent libvirt compatibility
+  config.vm.box = "generic/ubuntu2204"
+  
+  # Set libvirt as the default provider for this project
+  ENV['VAGRANT_DEFAULT_PROVIDER'] = 'libvirt'
+
+  # Controller Node
+  config.vm.define "controller-0" do |node|
+    node.vm.hostname = "controller-0"
+    node.vm.network "private_network", ip: "10.240.0.11"
+    node.vm.provider :libvirt do |domain|
+      domain.memory = 2048
+      domain.cpus = 2
+    end
+  end
+
+  # Worker Node
+  config.vm.define "worker-0" do |node|
+    node.vm.hostname = "worker-0"
+    node.vm.network "private_network", ip: "10.240.0.21"
+    node.vm.provider :libvirt do |domain|
+      domain.memory = 2048
+      domain.cpus = 2
+    end
+  end
+end
