@@ -85,6 +85,12 @@ Start the vm's
 ```
 cd vagrant
 vagrant up
+
+# suspend the machine
+vagrant suspend server node-0 node-1
+
+# to resume the suspended machine
+vagrant resume server node-0 node-1
 ```
 
 ## Download the required binaries in jumphost (Local laptop terminal) to avoid redownloading the binaries

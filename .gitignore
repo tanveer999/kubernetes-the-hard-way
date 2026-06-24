@@ -1,2 +1,4 @@
-.vagrant
-downloads-binaries
+.vagrant/
+downloads-binaries/
+vagrant/root-ssh-key/
+machine.txt
