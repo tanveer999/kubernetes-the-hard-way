@@ -91,6 +91,16 @@ vagrant suspend server node-0 node-1
 
 # to resume the suspended machine
 vagrant resume server node-0 node-1
+
+# Follow below steps when vm's are in inaccessible state
+# Get the domain names of the vm
+virsh list -all
+
+# Destroy the VM (Basically like removing the power plug)
+virsh destroy <domain_name>
+
+# Run below  after destroying
+vagrant up
 ```
 
 ## Download the required binaries in jumphost (Local laptop terminal) to avoid redownloading the binaries
