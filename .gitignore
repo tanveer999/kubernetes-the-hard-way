@@ -1,3 +1,4 @@
 .vagrant/
 downloads-binaries/
 vagrant/root-ssh-key/
+certs/
